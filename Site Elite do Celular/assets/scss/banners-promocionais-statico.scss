@@ -1,0 +1,72 @@
+@mixin banners-promocionais($cor, $url-image) {
+    background-color: $cor;
+    background-image: url($url-image);
+    
+  }
+
+  .avisos{
+    background: rgb(207, 207, 207);
+    margin-bottom: -16px;
+    padding: 5px;
+  }
+  .avisos strong{
+    color: $azul;
+  }
+  .avisos p{
+    animation: animate 1.5s linear infinite;
+  }
+  @keyframes animate{
+    0%{
+      opacity: 1;
+    }
+    50%{
+      opacity: 0.5;
+    }
+    60%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+
+  .banners-promocionais-statico{
+    margin-top: 30px;
+  
+    .banners-promocionais-statico-esperanca{
+      @include banners-promocionais($azul, '../img/banners/esperanca.jpg');
+    }
+  
+    .banners-promocionais-statico-campina{
+      @include banners-promocionais($azul, '../img/banners/campina.jpg');
+    } 
+  
+    .banners-promocionais-statico-esperanca,
+    .banners-promocionais-statico-campina{
+      background-size: cover;
+      height: 105px;
+      padding: 20px 60px;
+      color: $branco;
+      margin-bottom: 10px;
+  
+      svg, p{
+        margin: 0;
+        padding: 0;
+      }
+
+      p{
+        font-weight: 100;
+        font-size: 24px;
+        line-height: 110%;
+        margin-left: 20px;
+        strong{
+          font-weight: bold;
+        }
+      } 
+    }
+    .banners-promocionais-statico-esperanca:hover,
+    .banners-promocionais-statico-campina:hover{
+      opacity: 0.7;
+      transform: scale(1.05);
+    }
+  }
